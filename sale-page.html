@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Sale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            width: 800px;
+            height: 600px;
+            position: relative;
+            background-color: #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* 4 khung hình ở 4 góc */
+        .image-frame {
+            position: absolute;
+            width: 180px;
+            height: 140px;
+            background-color: #000;
+            border: 8px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .image-frame.top-left {
+            top: 20px;
+            left: 20px;
+        }
+        
+        .image-frame.top-right {
+            top: 20px;
+            right: 20px;
+        }
+        
+        .image-frame.bottom-left {
+            bottom: 20px;
+            left: 20px;
+        }
+        
+        .image-frame.bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        /* Nội dung trung tâm */
+        .center-content {
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .ultimate-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .sale-text {
+            font-size: 72px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+        }
+        
+        .new-collection {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+        
+        .btn-click {
+            background-color: #333;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-click:hover {
+            background-color: #555;
+        }
+        
+        /* Biểu tượng trong khung hình */
+        .mountain-icon {
+            font-size: 40px;
+        }
+        
+        .sun-icon {
+            font-size: 30px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        
+        .gallery-icon {
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 4 khung hình ở 4 góc -->
+        <div class="image-frame top-left">
+            <div class="mountain-icon">▲▲▲</div>
+            <div class="sun-icon">☀</div>
+        </div>
+        
+        <div class="image-frame top-right">
+            <div class="mountain-icon">▲▲▲</div>
+            <div class="sun-icon">☀</div>
+        </div>
+        
+        <div class="image-frame bottom-left">
+            <div class="gallery-icon">
+                📷<br>
+                Gallery
+            </div>
+        </div>
+        
+        <div class="image-frame bottom-right">
+            <div class="gallery-icon">
+                📷<br>
+                Gallery
+            </div>
+        </div>
+        
+        <!-- Nội dung trung tâm -->
+        <div class="center-content">
+            <div class="ultimate-text">ULTIMATE</div>
+            <div class="sale-text">SALE</div>
+            <div class="new-collection">NEW COLLECTION</div>
+            <button class="btn-click" onclick="clickButton()">Nhấn vào</button>
+        </div>
+    </div>
+    
+    <script>
+        function clickButton() {
+            alert('Bạn đã nhấn nút! Chào mừng đến với bộ sưu tập mới!');
+        }
+    </script>
+</body>
+</html>
