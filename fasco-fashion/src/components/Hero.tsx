@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Hero.css';
 
 const Hero: React.FC = () => {
+  const [showSingleImage, setShowSingleImage] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowSingleImage(!showSingleImage);
+  };
+
   return (
     <section className="hero">
       <div className="container">
@@ -26,31 +32,23 @@ const Hero: React.FC = () => {
                 <span className="sale-text">SALE</span>
               </h1>
               <p className="hero-subtitle">NEW COLLECTION</p>
-              <button className="shop-now-btn">Mua ngay</button>
+              <button className="shop-now-btn" onClick={handleButtonClick}>
+                {showSingleImage ? 'Hiển thị 3 hình' : 'Hiển thị 1 hình'}
+              </button>
             </div>
             
-            <div className="hero-images-stack">
-              <div className="image-stack">
-                <div className="stacked-image">
-                  <div className="small-image">
-                    🏔️
-                    <div className="small-sun">☀️</div>
-                  </div>
-                </div>
-                <div className="stacked-image">
-                  <div className="small-image">
-                    🏔️
-                    <div className="small-sun">☀️</div>
-                  </div>
-                </div>
-                <div className="stacked-image">
-                  <div className="small-image">
-                    🏔️
-                    <div className="small-sun">☀️</div>
+            {showSingleImage ? (
+              <div className="hero-images-stack">
+                <div className="image-stack single-image-display">
+                  <div className="stacked-image single">
+                    <div className="small-image">
+                      🏔️
+                      <div className="small-sun">☀️</div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ) : null}
           </div>
           
           <div className="hero-right">
